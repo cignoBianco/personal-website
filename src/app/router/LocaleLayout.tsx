@@ -1,0 +1,31 @@
+import { Navigate, Outlet, useParams } from "react-router-dom";
+
+import {
+    type Locale,
+} from "../../shared/routing/locales";
+import {
+    isLocale,
+} from "../../shared/routing/validate-locale";
+
+import { Header } from "../../widgets/header/Header";
+import { Footer } from "../../widgets/footer/Footer";
+
+export function LocaleLayout() {
+    const { locale } = useParams<{ locale: Locale }>();
+
+    if (!isLocale(locale)) {
+        return <Navigate to="/en" replace />;
+    }
+
+    return (
+        <>
+            <Header />
+
+            <main>
+                <Outlet />
+            </main>
+
+            <Footer />
+        </>
+    );
+}

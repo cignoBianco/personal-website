@@ -3,9 +3,7 @@ import './App.css'
 function App() {
 
   return (
-    <>
-      f
-    </>
+    <RouterProvider router={router} />
   )
 }
 

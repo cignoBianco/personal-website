@@ -3,9 +3,9 @@ import { Navigate, Outlet, useParams } from "react-router-dom";
 import {
     type Locale, isLocale
 } from "../../shared/routing/locales";
+import { Header } from "@/widgets/header/Header";
+import { Footer } from "@/widgets/footer/Footer";
 
-import { Header } from "../../widgets/header/Header";
-import { Footer } from "../../widgets/footer/Footer";
 
 export function LocaleLayout() {
     const { locale } = useParams<{ locale: Locale }>();
@@ -15,7 +15,7 @@ export function LocaleLayout() {
     }
 
     return (
-        <>
+        <div className="min-h-screen">
             <Header />
 
             <main>
@@ -23,6 +23,6 @@ export function LocaleLayout() {
             </main>
 
             <Footer />
-        </>
+        </div>
     );
 }

@@ -1,25 +1,18 @@
-import { useParams } from "react-router-dom";
-
 import {
     useArticles,
 } from "@/entities/article";
 
-import {
-    isLocale,
-} from "@/shared/routing/locales";
+import { useLocale } from "@/shared/routing";
 
 export function ArticlesPage() {
-    const { locale } = useParams();
-
-    if (!isLocale(locale)) {
-        return null;
-    }
+    const locale = useLocale();
 
     const {
         data,
         isLoading,
         isError,
     } = useArticles(locale);
+
 
     if (isLoading) {
         return <div>Loading...</div>;
@@ -31,6 +24,14 @@ export function ArticlesPage() {
 
     return (
         <div>
+            <header>
+                <h1>Articles</h1>
+
+                <p>
+                    Thoughts, tutorials and research
+                    notes.
+                </p>
+            </header>
             {data.items.map((article) => (
                 <article key={article.id}>
                     <h2>{article.title}</h2>
@@ -38,6 +39,18 @@ export function ArticlesPage() {
                     {article.excerpt && (
                         <p>{article.excerpt}</p>
                     )}
+
+                    <div>
+                        {article.category && (
+                            <span>
+                                {article.category.name}
+                            </span>
+                        )}
+
+                        <span>
+                            {article.reading_time_minutes} min
+                        </span>
+                    </div>
                 </article>
             ))}
         </div>

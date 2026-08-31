@@ -1,0 +1,81 @@
+{
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "articles": "Articles",
+      "blog": "Blog",
+      "videos": "Videos",
+      "projects": "Projects",
+      "art": "Art & Design",
+      "resume": "Resume",
+      "contact": "Contact"
+    },
+  
+    "common": {
+      "loading": "Loading...",
+      "error": "Something went wrong.",
+      "readMore": "Read more",
+      "viewAll": "View all",
+      "back": "Back",
+      "download": "Download"
+    },
+  
+    "home": {
+      "eyebrow": "Fullstack Developer & ML/DL Engineer",
+      "title": "Building intelligent digital experiences.",
+      "description": "Software engineer, researcher, artist and lifelong learner.",
+      "viewProjects": "View projects",
+      "downloadCv": "Download CV"
+    },
+  
+    "about": {
+      "eyebrow": "About me",
+      "title": "Developer, researcher, creative and lifelong learner.",
+      "description": "I work at the intersection of software engineering, machine learning, biotechnology and creative practice.",
+  
+      "interestsTitle": "Areas of interest",
+  
+      "interests": {
+        "software": "Software engineering",
+        "machineLearning": "Machine learning",
+        "deepLearning": "Deep learning",
+        "biotechnology": "Plant biotechnology",
+        "psychology": "Psychology and psychotherapy",
+        "cynology": "Cynology",
+        "linguistics": "Linguistics",
+        "art": "Art and design",
+        "languages": "Languages",
+        "sports": "Sports"
+      }
+    },
+  
+    "blog": {
+      "eyebrow": "Blog",
+      "title": "Notes, ideas and observations.",
+      "description": "Thoughts about technology, research, learning and creativity.",
+      "latest": "Latest posts"
+    },
+  
+    "resume": {
+      "eyebrow": "Curriculum Vitae",
+      "headline": "Fullstack Developer & ML/DL Engineer",
+      "description": "Software engineer working across fullstack development, machine learning and research.",
+  
+      "download": "Download CV",
+  
+      "education": "Education",
+      "professionalRetraining": "Professional retraining",
+      "skills": "Technical skills",
+      "languages": "Languages",
+      "achievements": "Achievements",
+      "interests": "Interests"
+    },
+  
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Let's build something meaningful.",
+      "description": "I am open to interesting projects, research collaborations and professional opportunities.",
+      "getInTouch": "Get in touch",
+      "collaboration": "Collaboration"
+    }
+  }

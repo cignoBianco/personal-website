@@ -1,9 +1,9 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import ruCommon from "./locales/ru/common.json";
-import enCommon from "./locales/en/common.json";
-import frCommon from "./locales/fr/common.json";
+import ruCommon from "@/i18n/locales/ru/common.json"
+import enCommon from "@/i18n/locales/en/common.json";
+// import frCommon from "@/i18n/locales/fr/common.json";
 
 const resources = {
   ru: {
@@ -12,9 +12,9 @@ const resources = {
   en: {
     common: enCommon,
   },
-  fr: {
-    common: frCommon,
-  },
+  // fr: {
+  //   common: frCommon,
+  // },
 };
 
 i18n

@@ -1,5 +1,4 @@
 
-import React from "react";
 import { useTheme } from "@/app/providers";
 
 export function ThemeSwitcher() {

@@ -1,11 +1,8 @@
 import { Navigate, Outlet, useParams } from "react-router-dom";
 
 import {
-    type Locale,
+    type Locale, isLocale
 } from "../../shared/routing/locales";
-import {
-    isLocale,
-} from "../../shared/routing/validate-locale";
 
 import { Header } from "../../widgets/header/Header";
 import { Footer } from "../../widgets/footer/Footer";

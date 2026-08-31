@@ -9,3 +9,13 @@ export const SUPPORTED_LOCALES = [
   
   export const DEFAULT_LOCALE: Locale = "en";
   
+  export function isLocale(
+    value: string | undefined,
+  ): value is Locale {
+    return (
+      value !== undefined &&
+      SUPPORTED_LOCALES.includes(
+        value as Locale,
+      )
+    );
+  }

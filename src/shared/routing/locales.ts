@@ -3,6 +3,11 @@ export const SUPPORTED_LOCALES = [
     "en",
     "fr",
   ] as const;
+
+  export const ACTIVE_LOCALES = [
+    "ru",
+    "en",
+  ] as const;
   
   export type Locale =
     (typeof SUPPORTED_LOCALES)[number];

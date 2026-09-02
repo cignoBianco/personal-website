@@ -5,6 +5,7 @@ import {
 } from "../../shared/routing/locales";
 import { Header } from "@/widgets/header/Header";
 import { Footer } from "@/widgets/footer/Footer";
+import { I18nProvider } from "../providers";
 
 
 export function LocaleLayout() {
@@ -15,14 +16,17 @@ export function LocaleLayout() {
     }
 
     return (
-        <div className="min-h-screen">
-            <Header />
+        <I18nProvider>
+            <div className="min-h-screen">
+                <Header />
 
-            <main>
-                <Outlet />
-            </main>
+                <main>
+                    <Outlet />
+                </main>
 
-            <Footer />
-        </div>
+                <Footer />
+            </div>
+        </I18nProvider>
+
     );
 }

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import {
-  DEFAULT_LOCALE,
+//   DEFAULT_LOCALE,
   isLocale,
   type Locale,
 } from "./locales";
@@ -11,7 +11,11 @@ export function useLocale(): Locale {
     locale: string;
   }>();
 
-  return isLocale(locale)
-    ? locale
-    : DEFAULT_LOCALE;
+  if (!isLocale(locale)) {
+    throw new Error(
+      `Invalid locale: ${locale}`,
+    );
+  }
+
+  return locale;
 }

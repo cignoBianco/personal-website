@@ -20,6 +20,7 @@ import { ResumePage } from "@/pages/resume";
 import { ContactPage } from "@/pages/contact";
 import { AboutPage } from "@/pages/about";
 import { BlogPage } from "@/pages/blog";
+import { ProjectPage, ProjectsPage } from "@/pages/projects";
 // import { ProjectPage, ProjectsPage } from "@/pages/projects";
 
 export const publicRoutes: RouteObject = {
@@ -61,19 +62,19 @@ export const publicRoutes: RouteObject = {
         //     element: <VideosPage />,
         // },
 
-        // {
-        //     path: "projects",
-        //     children: [
-        //         {
-        //             index: true,
-        //             element: <ProjectsPage />,
-        //         },
-        //         {
-        //             path: ":slug",
-        //             element: <ProjectPage />,
-        //         },
-        //     ],
-        // },
+        {
+            path: "projects",
+            children: [
+                {
+                    index: true,
+                    element: <ProjectsPage />,
+                },
+                {
+                    path: ":slug",
+                    element: <ProjectPage />,
+                },
+            ],
+        },
 
         // {
         //     path: "art",

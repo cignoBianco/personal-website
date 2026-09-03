@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useLocale } from "@/shared/routing";
 
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { ThemeSwitcher } from "./ThemeSwitcher";
+import { ThemeSwitcher } from "../../features/theme-switcher/ThemeSwitcher";
 
 export function Header() {
     const { t } = useTranslation();

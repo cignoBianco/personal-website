@@ -8,4 +8,4 @@ export {
   
   export {
     ThemeSwitcher,
-  } from "./ThemeSwitcher";
+  } from "../../features/theme-switcher/ThemeSwitcher";

@@ -85,3 +85,24 @@ export async function getProject(
         ) ?? null,
     );
 }
+
+export async function getProjectFilters() {
+    return {
+        tags: Array.from(
+            new Set(
+                projects.flatMap(
+                    (project) =>
+                        project.tags,
+                ),
+            ),
+        ),
+        technologies: Array.from(
+            new Set(
+                projects.flatMap(
+                    (project) =>
+                        project.technologies,
+                ),
+            ),
+        ),
+    };
+}

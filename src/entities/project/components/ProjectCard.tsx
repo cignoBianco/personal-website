@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
-import type { ProjectDTO } from "@/entities/project";
+// import type { ProjectDTO } from "@/entities/project";
 import { useLocale } from "@/shared/routing";
+import type { Project } from "../types";
 
 interface ProjectCardProps {
-    project: ProjectDTO;
+    project: Project;//ProjectDTO;
 }
 
 export function ProjectCard({
@@ -14,9 +15,9 @@ export function ProjectCard({
 
     return (
         <article>
-            {project.cover_url && (
+            {project.coverUrl && (
                 <img
-                    src={project.cover_url}
+                    src={project.coverUrl}
                     alt={project.title}
                 />
             )}
@@ -26,9 +27,9 @@ export function ProjectCard({
                     {project.title}
                 </h2>
 
-                {project.short_description && (
+                {project.shortDescription && (
                     <p>
-                        {project.short_description}
+                        {project.shortDescription}
                     </p>
                 )}
 

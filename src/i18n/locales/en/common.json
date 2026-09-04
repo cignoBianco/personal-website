@@ -86,9 +86,19 @@
         "description": "Fullstack developer, ML/DL engineer, researcher and creative."
     },
 
+    
     "projects": {
         "eyebrow": "Selected work",
         "title": "Projects",
-        "description": "A selection of my software, machine learning and research projects."
+        "description": "A selection of my software, machine learning and research projects.",
+        "empty": "No projects found.",
+        "filters": {
+            "tag": "Tag",
+            "technology": "Technology",
+            "all": "All",
+            "featured": "Featured only",
+            "reset": "Reset"
+        }
     }
+    
 }

@@ -1,6 +1,7 @@
-import type { ProjectDTO } from "./types";
-
-import { apiClient } from "@/shared/api/client";
+// import type { ProjectDTO } from "./types";
+import type { Project } from "./types";
+import { projects } from "./mock";
+// import { apiClient } from "@/shared/api/client";
 
 export interface GetProjectsParams {
     locale: string;
@@ -11,31 +12,76 @@ export interface GetProjectsParams {
     offset?: number;
 }
 
+// export async function getProjects(
+//     params: GetProjectsParams,
+// ): Promise<ProjectDTO[]> {
+//     const response = await apiClient.get<ProjectDTO[]>(
+//         "/projects",
+//         {
+//             params,
+//         },
+//     );
+
+//     return response.data;
+// }
+
+// export async function getProject(
+//     slug: string,
+//     locale: string,
+// ): Promise<ProjectDTO> {
+//     const response = await apiClient.get<ProjectDTO>(
+//         `/projects/${slug}`,
+//         {
+//             params: {
+//                 locale,
+//             },
+//         },
+//     );
+
+//     return response.data;
+// }
+
 export async function getProjects(
     params: GetProjectsParams,
-): Promise<ProjectDTO[]> {
-    const response = await apiClient.get<ProjectDTO[]>(
-        "/projects",
-        {
-            params,
-        },
-    );
+): Promise<Project[]> {
+    let result = [...projects];
 
-    return response.data;
+    if (params.featured !== undefined) {
+        result = result.filter(
+            (project) =>
+                project.featured === params.featured,
+        );
+    }
+
+    if (params.tag) {
+        result = result.filter(
+            (project) =>
+                project.tags.includes(
+                    params.tag!,
+                ),
+        );
+    }
+
+    if (params.technology) {
+        result = result.filter(
+            (project) =>
+                project.technologies.includes(
+                    params.technology!,
+                ),
+        );
+    }
+
+    return Promise.resolve(result);
 }
 
 export async function getProject(
     slug: string,
-    locale: string,
-): Promise<ProjectDTO> {
-    const response = await apiClient.get<ProjectDTO>(
-        `/projects/${slug}`,
-        {
-            params: {
-                locale,
-            },
-        },
+    _locale: string,
+): Promise<Project | null> {
+    return Promise.resolve(
+        projects.find(
+            (project) =>
+                project.slug === slug,
+        ) ?? null,
     );
-
-    return response.data;
 }

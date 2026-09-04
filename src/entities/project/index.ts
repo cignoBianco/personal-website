@@ -14,5 +14,5 @@ export type {
 
 export type {
     Project,
-    ProjectDTO,
+    // ProjectDTO,
 } from "./types";

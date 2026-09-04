@@ -1,7 +1,7 @@
-import type { components } from "@/shared/api/generated";
+// import type { components } from "@/shared/api/generated";
 
-export type ProjectDTO =
-    components["schemas"]["ProjectRead"];
+// export type ProjectDTO =
+//     components["schemas"]["ProjectRead"];
 
 export interface Project {
     id: number;
@@ -16,4 +16,12 @@ export interface Project {
     demoUrl: string | null;
     featured: boolean;
     publishedAt: string | null;
+}
+
+export interface ProjectTranslation {
+    locale: string;
+
+    title: string;
+    shortDescription: string;
+    description: string;
 }

@@ -87,11 +87,16 @@
     },
 
     
-    "projects": {
+   "projects": {
         "eyebrow": "Selected work",
         "title": "Projects",
         "description": "A selection of my software, machine learning and research projects.",
         "empty": "No projects found.",
+        "notFound": "Project not found.",
+        "project": "Project",
+        "technologies": "Technologies",
+        "tags": "Tags",
+        "liveDemo": "Live demo",
         "filters": {
             "tag": "Tag",
             "technology": "Technology",

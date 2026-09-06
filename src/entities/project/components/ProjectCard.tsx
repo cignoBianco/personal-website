@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import type { ProjectDTO } from "@/entities/project";
 import { useLocale } from "@/shared/routing";
 import type { Project } from "../types";
+import { useTranslation } from "react-i18next";
 
 interface ProjectCardProps {
     project: Project;//ProjectDTO;
@@ -11,7 +12,11 @@ interface ProjectCardProps {
 export function ProjectCard({
     project,
 }: ProjectCardProps) {
-    const locale = useLocale();
+    const locale =
+        useLocale();
+
+    const { t } =
+        useTranslation();
 
     return (
         <article>
@@ -50,7 +55,9 @@ export function ProjectCard({
                 <Link
                     to={`/${locale}/projects/${project.slug}`}
                 >
-                    View project
+                    {t(
+                        "common.readMore",
+                    )}
                 </Link>
             </div>
         </article>

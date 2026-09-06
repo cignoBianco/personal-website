@@ -1,16 +1,11 @@
-import {
-    useParams,
-} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import {
     useProject,
 } from "@/entities/project";
 
-import {
-    useLocale,
-} from "@/shared/routing";
-
-import { useTranslation } from "react-i18next";
+import { useLocale } from "@/shared/routing";
 
 export function ProjectPage() {
     const { t } =
@@ -35,66 +30,174 @@ export function ProjectPage() {
 
     if (isLoading) {
         return (
-            <div>
-                {t("common.loading")}
-            </div>
+            <main>
+                <p>
+                    {t("common.loading")}
+                </p>
+            </main>
         );
     }
 
-    if (isError || !project) {
+    if (isError) {
         return (
-            <div>
-                {t("common.error")}
-            </div>
+            <main>
+                <p>
+                    {t("common.error")}
+                </p>
+
+                <Link
+                    to={`/${locale}/projects`}
+                >
+                    {t("common.back")}
+                </Link>
+            </main>
+        );
+    }
+
+    if (!project) {
+        return (
+            <main>
+                <h1>
+                    {t("projects.notFound")}
+                </h1>
+
+                <Link
+                    to={`/${locale}/projects`}
+                >
+                    {t("common.back")}
+                </Link>
+            </main>
         );
     }
 
     return (
-        <article>
-            {project.cover_url && (
-                <img
-                    src={project.cover_url}
-                    alt={project.title}
-                />
-            )}
-
-            <header>
-                <h1>
-                    {project.title}
-                </h1>
-
-                {project.short_description && (
-                    <p>
-                        {project.short_description}
-                    </p>
+        <main>
+            <article>
+                {project.coverUrl && (
+                    <img
+                        src={project.coverUrl}
+                        alt={project.title}
+                    />
                 )}
-            </header>
 
-            {project.description && (
-                <div>
-                    {project.description}
-                </div>
-            )}
-
-            {project.technologies?.length > 0 && (
-                <section>
-                    <h2>
-                        Technologies
-                    </h2>
-
-                    <ul>
-                        {project.technologies.map(
-                            (technology) => (
-                                <li
-                                    key={technology}
-                                >
-                                    {technology}
-                                </li>
-                            ),
+                <header>
+                    <p>
+                        {t(
+                            "projects.project",
                         )}
-                    </ul>
-                </section>
-            )}
-        </article>
+                    </p>
+
+                    <h1>
+                        {project.title}
+                    </h1>
+
+                    <p>
+                        {
+                            project.shortDescription
+                        }
+                    </p>
+                </header>
+
+                {project.description && (
+                    <section>
+                        <p>
+                            {
+                                project.description
+                            }
+                        </p>
+                    </section>
+                )}
+
+                {project.technologies.length >
+                    0 && (
+                        <section>
+                            <h2>
+                                {t(
+                                    "projects.technologies",
+                                )}
+                            </h2>
+
+                            <ul>
+                                {project.technologies.map(
+                                    (
+                                        technology,
+                                    ) => (
+                                        <li
+                                            key={
+                                                technology
+                                            }
+                                        >
+                                            {
+                                                technology
+                                            }
+                                        </li>
+                                    ),
+                                )}
+                            </ul>
+                        </section>
+                    )}
+
+                {project.tags.length >
+                    0 && (
+                        <section>
+                            <h2>
+                                {t(
+                                    "projects.tags",
+                                )}
+                            </h2>
+
+                            <ul>
+                                {project.tags.map(
+                                    (tag) => (
+                                        <li
+                                            key={tag}
+                                        >
+                                            {tag}
+                                        </li>
+                                    ),
+                                )}
+                            </ul>
+                        </section>
+                    )}
+
+                <div>
+                    {project.githubUrl && (
+                        <a
+                            href={
+                                project.githubUrl
+                            }
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            GitHub
+                        </a>
+                    )}
+
+                    {project.demoUrl && (
+                        <a
+                            href={
+                                project.demoUrl
+                            }
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            {t(
+                                "projects.liveDemo",
+                            )}
+                        </a>
+                    )}
+                </div>
+
+                <footer>
+                    <Link
+                        to={`/${locale}/projects`}
+                    >
+                        {t(
+                            "common.back",
+                        )}
+                    </Link>
+                </footer>
+            </article>
+        </main>
     );
 }

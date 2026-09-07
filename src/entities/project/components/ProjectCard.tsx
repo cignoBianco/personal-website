@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-
-// import type { ProjectDTO } from "@/entities/project";
-import { useLocale } from "@/shared/routing";
-import type { Project } from "../types";
 import { useTranslation } from "react-i18next";
 
+import type { Project } from "../types";
+import { useLocale } from "@/shared/routing";
+
 interface ProjectCardProps {
-    project: Project;//ProjectDTO;
+    project: Project;
 }
 
 export function ProjectCard({
@@ -27,23 +26,23 @@ export function ProjectCard({
                 />
             )}
 
-            <div>
-                <h2>
-                    {project.title}
-                </h2>
+            <h2>
+                {project.title}
+            </h2>
 
-                {project.shortDescription && (
-                    <p>
-                        {project.shortDescription}
-                    </p>
-                )}
+            <p>
+                {project.shortDescription}
+            </p>
 
-                {project.technologies?.length > 0 && (
+            {project.technologies.length >
+                0 && (
                     <ul>
                         {project.technologies.map(
                             (technology) => (
                                 <li
-                                    key={technology}
+                                    key={
+                                        technology
+                                    }
                                 >
                                     {technology}
                                 </li>
@@ -52,14 +51,11 @@ export function ProjectCard({
                     </ul>
                 )}
 
-                <Link
-                    to={`/${locale}/projects/${project.slug}`}
-                >
-                    {t(
-                        "common.readMore",
-                    )}
-                </Link>
-            </div>
+            <Link
+                to={`/${locale}/projects/${project.slug}`}
+            >
+                {t("common.readMore")}
+            </Link>
         </article>
     );
 }

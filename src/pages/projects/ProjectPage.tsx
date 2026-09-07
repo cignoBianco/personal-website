@@ -1,9 +1,20 @@
-import { Link, useParams } from "react-router-dom";
+import {
+    Link,
+    useParams,
+} from "react-router-dom";
+
 import { useTranslation } from "react-i18next";
 
 import {
     useProject,
 } from "@/entities/project";
+
+import {
+    ProjectHero,
+    ProjectLinks,
+    ProjectTags,
+    ProjectTechnologies,
+} from "@/entities/project/components";
 
 import { useLocale } from "@/shared/routing";
 
@@ -58,7 +69,9 @@ export function ProjectPage() {
         return (
             <main>
                 <h1>
-                    {t("projects.notFound")}
+                    {t(
+                        "projects.notFound",
+                    )}
                 </h1>
 
                 <Link
@@ -73,120 +86,36 @@ export function ProjectPage() {
     return (
         <main>
             <article>
-                {project.coverUrl && (
-                    <img
-                        src={project.coverUrl}
-                        alt={project.title}
-                    />
-                )}
+                <ProjectHero
+                    project={project}
+                />
 
-                <header>
-                    <p>
-                        {t(
-                            "projects.project",
-                        )}
-                    </p>
-
-                    <h1>
-                        {project.title}
-                    </h1>
-
+                <section>
                     <p>
                         {
-                            project.shortDescription
+                            project.description
                         }
                     </p>
-                </header>
+                </section>
 
-                {project.description && (
-                    <section>
-                        <p>
-                            {
-                                project.description
-                            }
-                        </p>
-                    </section>
-                )}
+                <ProjectTechnologies
+                    technologies={
+                        project.technologies
+                    }
+                />
 
-                {project.technologies.length >
-                    0 && (
-                        <section>
-                            <h2>
-                                {t(
-                                    "projects.technologies",
-                                )}
-                            </h2>
+                <ProjectTags
+                    tags={project.tags}
+                />
 
-                            <ul>
-                                {project.technologies.map(
-                                    (
-                                        technology,
-                                    ) => (
-                                        <li
-                                            key={
-                                                technology
-                                            }
-                                        >
-                                            {
-                                                technology
-                                            }
-                                        </li>
-                                    ),
-                                )}
-                            </ul>
-                        </section>
-                    )}
-
-                {project.tags.length >
-                    0 && (
-                        <section>
-                            <h2>
-                                {t(
-                                    "projects.tags",
-                                )}
-                            </h2>
-
-                            <ul>
-                                {project.tags.map(
-                                    (tag) => (
-                                        <li
-                                            key={tag}
-                                        >
-                                            {tag}
-                                        </li>
-                                    ),
-                                )}
-                            </ul>
-                        </section>
-                    )}
-
-                <div>
-                    {project.githubUrl && (
-                        <a
-                            href={
-                                project.githubUrl
-                            }
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            GitHub
-                        </a>
-                    )}
-
-                    {project.demoUrl && (
-                        <a
-                            href={
-                                project.demoUrl
-                            }
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            {t(
-                                "projects.liveDemo",
-                            )}
-                        </a>
-                    )}
-                </div>
+                <ProjectLinks
+                    githubUrl={
+                        project.githubUrl
+                    }
+                    demoUrl={
+                        project.demoUrl
+                    }
+                />
 
                 <footer>
                     <Link

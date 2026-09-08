@@ -104,6 +104,15 @@
             "featured": "Featured only",
             "reset": "Reset"
         }
-    }
+    },
+    "videos": {
+    "eyebrow": "Programming & research",
+    "title": "Videos",
+    "description": "Programming tutorials, machine learning, biotechnology and research videos.",
+    "empty": "No videos found.",
+    "featured": "Featured only",
+    "watch": "Watch video",
+    "thumbnailPlaceholder": "Video thumbnail"
+  } 
     
 }

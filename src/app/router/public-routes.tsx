@@ -21,6 +21,7 @@ import { ContactPage } from "@/pages/contact";
 import { AboutPage } from "@/pages/about";
 import { BlogPage } from "@/pages/blog";
 import { ProjectPage, ProjectsPage } from "@/pages/projects";
+import { VideosPage } from "@/pages/videos";
 // import { ProjectPage, ProjectsPage } from "@/pages/projects";
 
 export const publicRoutes: RouteObject = {
@@ -57,10 +58,10 @@ export const publicRoutes: RouteObject = {
             element: <BlogPage />,
         },
 
-        // {
-        //     path: "videos",
-        //     element: <VideosPage />,
-        // },
+        {
+            path: "videos",
+            element: <VideosPage />,
+        },
 
         {
             path: "projects",

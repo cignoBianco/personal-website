@@ -16,7 +16,7 @@ const resources = {
     common: frCommon,
   },
 };
-
+// Todo: арзделить locales на отдельные файлы*/
 i18n
   .use(initReactI18next)
   .init({

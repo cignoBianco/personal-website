@@ -8,13 +8,6 @@ import {
     ArticlePage,
 } from "@/pages/articles";
 
-// import { VideosPage } from "@/pages/videos/VideosPage";
-
-// import {
-//     ArtPage,
-//     ArtworkPage,
-// } from "@/pages/art";
-
 import { HomePage } from "@/pages/home";
 import { ResumePage } from "@/pages/resume";
 import { ContactPage } from "@/pages/contact";
@@ -22,7 +15,7 @@ import { AboutPage } from "@/pages/about";
 import { BlogPage } from "@/pages/blog";
 import { ProjectPage, ProjectsPage } from "@/pages/projects";
 import { VideosPage } from "@/pages/videos";
-// import { ProjectPage, ProjectsPage } from "@/pages/projects";
+import { ArtPage, ArtworkPage } from "@/pages/art";
 
 export const publicRoutes: RouteObject = {
     path: "/:locale",
@@ -76,21 +69,19 @@ export const publicRoutes: RouteObject = {
                 },
             ],
         },
-
-        // {
-        //     path: "art",
-        //     children: [
-        //         {
-        //             index: true,
-        //             element: <ArtPage />,
-        //         },
-        //         {
-        //             path: ":slug",
-        //             element: <ArtworkPage />,
-        //         },
-        //     ],
-        // },
-
+        {
+            path: "art",
+            children: [
+                {
+                    index: true,
+                    element: <ArtPage />,
+                },
+                {
+                    path: ":slug",
+                    element: <ArtworkPage />,
+                },
+            ],
+        },
         {
             path: "resume",
             element: <ResumePage />,

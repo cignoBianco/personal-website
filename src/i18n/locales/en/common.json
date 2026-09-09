@@ -113,6 +113,34 @@
     "featured": "Featured only",
     "watch": "Watch video",
     "thumbnailPlaceholder": "Video thumbnail"
-  } 
-    
+  }, 
+    "art": {
+    "eyebrow": "Selected artwork",
+    "title": "Art & Design",
+    "description": "A selection of my paintings, drawings, illustrations and digital works.",
+    "empty": "No artworks found.",
+    "notFound": "Artwork not found.",
+    "thumbnailPlaceholder": "Artwork preview",
+    "details": "Details",
+    "type": "Type",
+    "year": "Year",
+    "technique": "Technique",
+    "dimensions": "Dimensions",
+    "tags": "Tags",
+    "filters": {
+      "type": "Type",
+      "tag": "Tag",
+      "all": "All",
+      "featured": "Featured only",
+      "reset": "Reset"
+    },
+    "types": {
+      "painting": "Painting",
+      "drawing": "Drawing",
+      "digital": "Digital art",
+      "illustration": "Illustration",
+      "design": "Design",
+      "other": "Other"
+    }
+  }
 }

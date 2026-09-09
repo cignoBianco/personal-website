@@ -76,6 +76,7 @@ export async function getProjects(
 
 export async function getProject(
     slug: string,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     _locale: string,
 ): Promise<Project | null> {
     return Promise.resolve(

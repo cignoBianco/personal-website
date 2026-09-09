@@ -34,6 +34,7 @@ export async function getVideos(
 
 export async function getVideo(
     slug: string,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     _locale: string,
 ): Promise<Video | null> {
     return Promise.resolve(

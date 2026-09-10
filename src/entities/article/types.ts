@@ -86,6 +86,14 @@ export interface Article {
   availableLocales: Locale[];
 }
 
+export interface ArticleTranslation {
+  locale: string;
+
+  title: string;
+  excerpt: string;
+  content: string;
+}
+
 export interface ArticleCategory {
   id: string;
   slug: string;

@@ -142,5 +142,21 @@
       "design": "Design",
       "other": "Other"
     }
+  },
+  "articles": {
+    "eyebrow": "Knowledge & research",
+    "title": "Articles",
+    "description": "Articles about software engineering, machine learning, bioinformatics, biotechnology and research.",
+    "empty": "No articles found.",
+    "notFound": "Article not found.",
+    "thumbnailPlaceholder": "Article cover",
+    "minutes": "min read",
+    "tags": "Tags",
+    "filters": {
+      "tag": "Tag",
+      "all": "All",
+      "featured": "Featured only",
+      "reset": "Reset"
+    }
   }
 }

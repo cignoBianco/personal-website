@@ -47,42 +47,34 @@ export const articleKeys = {
 };
 
 export function useArticles(
-  locale: Locale,
-  params?: GetArticlesParams,
-  options?: Omit<
-    UseQueryOptions<ArticleListResponseDTO>,
-    "queryKey" | "queryFn"
-  >,
+  params: GetArticlesParams,
 ) {
   return useQuery({
-    queryKey: articleKeys.list(locale, params),
-
-    queryFn: () =>
-      getArticles(locale, params),
-
-    ...options,
+      queryKey: [
+          "articles",
+          params,
+      ],
+      queryFn: () =>
+          getArticles(params),
   });
 }
 
 export function useArticle(
-  locale: Locale,
   slug: string,
-  options?: Omit<
-    UseQueryOptions<ArticleDTO>,
-    "queryKey" | "queryFn"
-  >,
+  locale: Locale,
 ) {
   return useQuery({
-    queryKey: articleKeys.detail(
-      locale,
-      slug,
-    ),
-
-    queryFn: () =>
-      getArticle(locale, slug),
-
-    enabled: Boolean(slug),
-
-    ...options,
+      queryKey: [
+          "article",
+          locale,
+          slug,
+      ],
+      queryFn: () =>
+          getArticle(
+              slug,
+              locale,
+          ),
+      enabled:
+          Boolean(slug),
   });
 }

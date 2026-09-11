@@ -105,3 +105,21 @@ export interface ArticleTag {
   slug: string;
   name: string;
 }
+
+export interface ArticleListItem {
+  id: string;
+  slug: string;
+  locale: Locale;
+
+  title: string;
+  excerpt: string | null;
+
+  coverImageUrl: string | null;
+
+  publishedAt: Date | null;
+
+  readingTimeMinutes: number;
+
+  category: ArticleCategory | null;
+  tags: ArticleTag[];
+}

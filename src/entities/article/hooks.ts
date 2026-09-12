@@ -47,6 +47,7 @@ export const articleKeys = {
 };
 
 export function useArticles(
+  locale: Locale,
   params: GetArticlesParams,
 ) {
   return useQuery({
@@ -55,7 +56,7 @@ export function useArticles(
           params,
       ],
       queryFn: () =>
-          getArticles(params),
+          getArticles(locale, params),
   });
 }
 
@@ -71,8 +72,8 @@ export function useArticle(
       ],
       queryFn: () =>
           getArticle(
-              slug,
               locale,
+              slug
           ),
       enabled:
           Boolean(slug),
